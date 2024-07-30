@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		35B06F042C5C69F7005E633C /* SpaceX_LaunchesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F032C5C69F7005E633C /* SpaceX_LaunchesApp.swift */; };
 		35B06F062C5C69F7005E633C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F052C5C69F7005E633C /* ContentView.swift */; };
-		35B06F082C5C69F7005E633C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F072C5C69F7005E633C /* Item.swift */; };
 		35B06F0A2C5C69F9005E633C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35B06F092C5C69F9005E633C /* Assets.xcassets */; };
 		35B06F0D2C5C69F9005E633C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35B06F0C2C5C69F9005E633C /* Preview Assets.xcassets */; };
 		35B06F172C5C69F9005E633C /* SpaceX_LaunchesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F162C5C69F9005E633C /* SpaceX_LaunchesTests.swift */; };
 		35B06F212C5C69F9005E633C /* SpaceX_LaunchesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F202C5C69F9005E633C /* SpaceX_LaunchesUITests.swift */; };
 		35B06F232C5C69F9005E633C /* SpaceX_LaunchesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F222C5C69F9005E633C /* SpaceX_LaunchesUITestsLaunchTests.swift */; };
+		35B06F332C5C6BBF005E633C /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F322C5C6BBF005E633C /* Launch.swift */; };
+		35B06F352C5C6BFF005E633C /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F342C5C6BFF005E633C /* ApiService.swift */; };
+		35B06F372C5C6C3C005E633C /* LaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F362C5C6C3C005E633C /* LaunchListView.swift */; };
+		35B06F3B2C5C6C9B005E633C /* LaunchListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F3A2C5C6C9B005E633C /* LaunchListItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +41,6 @@
 		35B06F002C5C69F7005E633C /* SpaceX Launches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpaceX Launches.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B06F032C5C69F7005E633C /* SpaceX_LaunchesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceX_LaunchesApp.swift; sourceTree = "<group>"; };
 		35B06F052C5C69F7005E633C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		35B06F072C5C69F7005E633C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		35B06F092C5C69F9005E633C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35B06F0C2C5C69F9005E633C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		35B06F122C5C69F9005E633C /* SpaceX LaunchesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SpaceX LaunchesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +48,10 @@
 		35B06F1C2C5C69F9005E633C /* SpaceX LaunchesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SpaceX LaunchesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B06F202C5C69F9005E633C /* SpaceX_LaunchesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceX_LaunchesUITests.swift; sourceTree = "<group>"; };
 		35B06F222C5C69F9005E633C /* SpaceX_LaunchesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceX_LaunchesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		35B06F322C5C6BBF005E633C /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
+		35B06F342C5C6BFF005E633C /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		35B06F362C5C6C3C005E633C /* LaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListView.swift; sourceTree = "<group>"; };
+		35B06F3A2C5C6C9B005E633C /* LaunchListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +102,11 @@
 		35B06F022C5C69F7005E633C /* SpaceX Launches */ = {
 			isa = PBXGroup;
 			children = (
+				35B06F312C5C6BA5005E633C /* Models */,
+				35B06F302C5C6B81005E633C /* VIews */,
+				35B06F2F2C5C6B77005E633C /* Services */,
 				35B06F032C5C69F7005E633C /* SpaceX_LaunchesApp.swift */,
 				35B06F052C5C69F7005E633C /* ContentView.swift */,
-				35B06F072C5C69F7005E633C /* Item.swift */,
 				35B06F092C5C69F9005E633C /* Assets.xcassets */,
 				35B06F0B2C5C69F9005E633C /* Preview Content */,
 			);
@@ -128,6 +136,31 @@
 				35B06F222C5C69F9005E633C /* SpaceX_LaunchesUITestsLaunchTests.swift */,
 			);
 			path = "SpaceX LaunchesUITests";
+			sourceTree = "<group>";
+		};
+		35B06F2F2C5C6B77005E633C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				35B06F342C5C6BFF005E633C /* ApiService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		35B06F302C5C6B81005E633C /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				35B06F362C5C6C3C005E633C /* LaunchListView.swift */,
+				35B06F3A2C5C6C9B005E633C /* LaunchListItemView.swift */,
+			);
+			path = VIews;
+			sourceTree = "<group>";
+		};
+		35B06F312C5C6BA5005E633C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				35B06F322C5C6BBF005E633C /* Launch.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +294,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				35B06F062C5C69F7005E633C /* ContentView.swift in Sources */,
-				35B06F082C5C69F7005E633C /* Item.swift in Sources */,
+				35B06F352C5C6BFF005E633C /* ApiService.swift in Sources */,
+				35B06F3B2C5C6C9B005E633C /* LaunchListItemView.swift in Sources */,
+				35B06F372C5C6C3C005E633C /* LaunchListView.swift in Sources */,
+				35B06F332C5C6BBF005E633C /* Launch.swift in Sources */,
 				35B06F042C5C69F7005E633C /* SpaceX_LaunchesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
