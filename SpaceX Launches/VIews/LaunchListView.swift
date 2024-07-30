@@ -12,6 +12,10 @@ struct LaunchListView: View {
     @Environment(\.colorScheme) var colorScheme
     @Query private var launches: [Launch]
     
+    init(sort: SortDescriptor<Launch>) {
+        _launches = Query(sort: [sort])
+    }
+    
     var body: some View {
         List {
             ForEach(launches, id: \.id) { launch in
@@ -37,7 +41,7 @@ struct LaunchListView: View {
         let container = try ModelContainer(for: Launch.self, configurations: config)
         Launch.sampleLaunches.forEach { container.mainContext.insert($0) }
         
-        return LaunchListView().modelContainer(container)
+        return LaunchListView(sort: SortDescriptor(\Launch.date)).modelContainer(container)
     } catch {
         fatalError("Failed to create model container")
     }

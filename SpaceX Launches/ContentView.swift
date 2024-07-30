@@ -11,12 +11,32 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     private let apiService = ApiService()
+    @State private var sortOrder = SortDescriptor(\Launch.date, order: .forward)
     
     var body: some View {
         NavigationView {
-            LaunchListView()
+            LaunchListView(sort: sortOrder)
                 .navigationTitle("SpaceX Launches")
                 .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Menu {
+                            Picker("Sort", selection: $sortOrder) {
+                                Text("By date ascending")
+                                    .tag(SortDescriptor(\Launch.date, order: .forward))
+                                
+                                Text("By date descending")
+                                    .tag(SortDescriptor(\Launch.date, order: .reverse))
+                                
+                                Text("By name")
+                                    .tag(SortDescriptor(\Launch.name))
+                            }
+                            .pickerStyle(.inline)
+                        } label: {
+                            Image(systemName: "line.horizontal.3.decrease")
+                        }
+                    }
+                }
         }
         .navigationViewStyle(.stack)
         .task {
