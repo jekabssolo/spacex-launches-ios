@@ -30,6 +30,32 @@ struct LaunchDetailsView: View {
                     .clipShape(.rect(cornerRadius: 10))
                     .padding()
                 }
+                if launch.hasLinks() {
+                    Text("Links:")
+                    HStack {
+                        if let article = launch.article,
+                           let articleUrl = URL(string: article) {
+                            Link(destination: articleUrl, label: {
+                                Text("Article")
+                            })
+                            Divider()
+                        }
+                        if let wikipedia = launch.wikipedia,
+                           let wikipediaUrl = URL(string: wikipedia) {
+                            Link(destination: wikipediaUrl, label: {
+                                Text("Wikipedia")
+                            })
+                            Divider()
+                        }
+                        if let presskit = launch.presskit,
+                           let presskitUrl = URL(string: presskit) {
+                            Link(destination: presskitUrl, label: {
+                                Text("Presskit")
+                            })
+                        }
+                    }
+                    .padding()
+                }
             }
             .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
         }
