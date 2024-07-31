@@ -18,6 +18,7 @@
 		35B06F352C5C6BFF005E633C /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F342C5C6BFF005E633C /* ApiService.swift */; };
 		35B06F372C5C6C3C005E633C /* LaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F362C5C6C3C005E633C /* LaunchListView.swift */; };
 		35B06F3B2C5C6C9B005E633C /* LaunchListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F3A2C5C6C9B005E633C /* LaunchListItemView.swift */; };
+		35B06F3E2C5C6E3D005E633C /* formatLaunchStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F3D2C5C6E3D005E633C /* formatLaunchStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		35B06F342C5C6BFF005E633C /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		35B06F362C5C6C3C005E633C /* LaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListView.swift; sourceTree = "<group>"; };
 		35B06F3A2C5C6C9B005E633C /* LaunchListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListItemView.swift; sourceTree = "<group>"; };
+		35B06F3D2C5C6E3D005E633C /* formatLaunchStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formatLaunchStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		35B06F022C5C69F7005E633C /* SpaceX Launches */ = {
 			isa = PBXGroup;
 			children = (
+				35B06F3C2C5C6E2A005E633C /* Helpers */,
 				35B06F312C5C6BA5005E633C /* Models */,
 				35B06F302C5C6B81005E633C /* VIews */,
 				35B06F2F2C5C6B77005E633C /* Services */,
@@ -161,6 +164,14 @@
 				35B06F322C5C6BBF005E633C /* Launch.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		35B06F3C2C5C6E2A005E633C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				35B06F3D2C5C6E3D005E633C /* formatLaunchStatus.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +308,7 @@
 				35B06F352C5C6BFF005E633C /* ApiService.swift in Sources */,
 				35B06F3B2C5C6C9B005E633C /* LaunchListItemView.swift in Sources */,
 				35B06F372C5C6C3C005E633C /* LaunchListView.swift in Sources */,
+				35B06F3E2C5C6E3D005E633C /* formatLaunchStatus.swift in Sources */,
 				35B06F332C5C6BBF005E633C /* Launch.swift in Sources */,
 				35B06F042C5C69F7005E633C /* SpaceX_LaunchesApp.swift in Sources */,
 			);

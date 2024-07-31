@@ -28,6 +28,12 @@ struct LaunchListItemView: View {
                 .frame(width: 20)
             VStack(alignment: .leading) {
                 Text(launch.name)
+                let launchStatus = formatLaunchStatus(
+                    upcoming: launch.upcoming,
+                    success: launch.success
+                )
+                Text(launchStatus.title)
+                    .foregroundStyle(launchStatus.color)
             }
         }
     }
