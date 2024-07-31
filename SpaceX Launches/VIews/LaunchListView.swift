@@ -20,7 +20,7 @@ struct LaunchListView: View {
         List {
             ForEach(launches, id: \.id) { launch in
                 NavigationLink {
-                    Text(launch.name)
+                    LaunchDetailsView(launch: launch)
                 } label: {
                     LaunchListItemView(launch: launch)
                 }
