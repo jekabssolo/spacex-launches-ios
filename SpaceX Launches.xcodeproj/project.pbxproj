@@ -21,6 +21,7 @@
 		35B06F3E2C5C6E3D005E633C /* formatLaunchStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F3D2C5C6E3D005E633C /* formatLaunchStatus.swift */; };
 		35B06F402C5C6E80005E633C /* LaunchDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F3F2C5C6E80005E633C /* LaunchDetailsView.swift */; };
 		35B06F422C5C6F26005E633C /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F412C5C6F26005E633C /* BadgeView.swift */; };
+		35B06F442C5C6F70005E633C /* formatDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F432C5C6F70005E633C /* formatDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		35B06F3D2C5C6E3D005E633C /* formatLaunchStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formatLaunchStatus.swift; sourceTree = "<group>"; };
 		35B06F3F2C5C6E80005E633C /* LaunchDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsView.swift; sourceTree = "<group>"; };
 		35B06F412C5C6F26005E633C /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		35B06F432C5C6F70005E633C /* formatDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formatDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				35B06F3D2C5C6E3D005E633C /* formatLaunchStatus.swift */,
+				35B06F432C5C6F70005E633C /* formatDate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35B06F442C5C6F70005E633C /* formatDate.swift in Sources */,
 				35B06F062C5C69F7005E633C /* ContentView.swift in Sources */,
 				35B06F352C5C6BFF005E633C /* ApiService.swift in Sources */,
 				35B06F3B2C5C6C9B005E633C /* LaunchListItemView.swift in Sources */,
