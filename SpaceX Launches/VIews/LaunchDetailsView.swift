@@ -56,6 +56,13 @@ struct LaunchDetailsView: View {
                     }
                     .padding()
                 }
+                if let details = launch.details {
+                    Text("About:")
+                    Text(details)
+                        .foregroundStyle(.secondary)
+                        .lineSpacing(5)
+                        .padding()
+                }
             }
             .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
         }
