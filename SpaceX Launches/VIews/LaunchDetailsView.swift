@@ -16,6 +16,15 @@ struct LaunchDetailsView: View {
                 Text(launch.name)
                     .font(.largeTitle)
                     .frame(maxWidth: .infinity, alignment: .center)
+                HStack {
+                    let launchStatus = formatLaunchStatus(
+                        upcoming: launch.upcoming,
+                        success: launch.success
+                    )
+                    BadgeView(color: launchStatus.color, text: launchStatus.title)
+                }
+                Spacer()
+                    .frame(height: 10)
                 if let image = launch.flickrImages.first
                     ?? launch.patchImageLarge
                     ?? launch.patchImageSmall
