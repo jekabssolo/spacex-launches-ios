@@ -17,6 +17,7 @@ struct LaunchDetailsView: View {
                     .font(.largeTitle)
                     .frame(maxWidth: .infinity, alignment: .center)
                 HStack {
+                    BadgeView(color: .gray, text: formatDate(launch.date))
                     let launchStatus = formatLaunchStatus(
                         upcoming: launch.upcoming,
                         success: launch.success
