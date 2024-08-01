@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
 
 struct LaunchListItemView: View {
     let launch: Launch
@@ -13,7 +14,7 @@ struct LaunchListItemView: View {
     var body: some View {
         HStack {
             if let imageUrl = launch.patchImageSmall ?? launch.patchImageLarge {
-                AsyncImage(url: URL(string: imageUrl)) { image in
+                CachedAsyncImage(url: URL(string: imageUrl)) { image in
                     image.resizable()
                 } placeholder: {
                     ProgressView()

@@ -10,8 +10,9 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    private let apiService = ApiService()
     @State private var sortOrder = SortDescriptor(\Launch.date, order: .forward)
+    @AppStorage("lastUpdate") private var lastUpdate: Double = Date().timeIntervalSince1970
+    private let apiService = ApiService()
     
     var body: some View {
         NavigationView {
@@ -40,15 +41,31 @@ struct ContentView: View {
         }
         .navigationViewStyle(.stack)
         .task {
-            let descriptor = FetchDescriptor<Launch>()
-            let count = (try? modelContext.fetchCount(descriptor)) ?? 0
-            if count == 0 {
+            if shouldUpdateCache() {
                 apiService.updateLaunches(modelContext: modelContext)
+                lastUpdate = Date().timeIntervalSince1970
             }
         }
         .refreshable {
             apiService.updateLaunches(modelContext: modelContext)
+            lastUpdate = Date().timeIntervalSince1970
         }
+    }
+    
+    func shouldUpdateCache() -> Bool {
+        let descriptor = FetchDescriptor<Launch>()
+        let count = (try? modelContext.fetchCount(descriptor)) ?? 0
+        
+        // Load data if cache is empty
+        guard count != 0 else { return true }
+        
+        let updateInterval = 600
+        let lastUpdateTime = Date(timeIntervalSince1970: lastUpdate)
+        
+        guard let updateTimeDiff = Calendar.current.dateComponents([.second], from: lastUpdateTime, to: Date()).second else { return true }
+        
+        // Load data if cache age reached update interval = 10 min
+        return updateTimeDiff >= updateInterval
     }
 }
 
