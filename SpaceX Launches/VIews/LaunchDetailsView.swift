@@ -73,6 +73,10 @@ struct LaunchDetailsView: View {
                         .lineSpacing(5)
                         .padding()
                 }
+                if launch.details == nil && !launch.hasLinks() {
+                    Text("No additional info")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                }
             }
             .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
         }
