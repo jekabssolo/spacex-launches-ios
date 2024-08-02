@@ -19,9 +19,9 @@ final class Launch: Codable {
     let article: String?
     let wikipedia: String?
     let presskit: String?
-    let patchImageSmall: String?
-    let patchImageLarge: String?
-    let flickrImages: [String]
+    var patchImageSmall: String?
+    var patchImageLarge: String?
+    var flickrImages: [String]
     
     init(
         id: String,

@@ -23,8 +23,8 @@
 		35B06F422C5C6F26005E633C /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F412C5C6F26005E633C /* BadgeView.swift */; };
 		35B06F442C5C6F70005E633C /* formatDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F432C5C6F70005E633C /* formatDate.swift */; };
 		35B06F4A2C5C7C3F005E633C /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 35B06F492C5C7C3F005E633C /* CachedAsyncImage */; };
-		35B06F592C5C8B02005E633C /* Snapshotting in Frameworks */ = {isa = PBXBuildFile; productRef = 35B06F582C5C8B02005E633C /* Snapshotting */; };
-		35B06F5B2C5C8B02005E633C /* SnapshottingTests in Frameworks */ = {isa = PBXBuildFile; productRef = 35B06F5A2C5C8B02005E633C /* SnapshottingTests */; };
+		35E95D722C5D14B80062B645 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 35E95D712C5D14B80062B645 /* SnapshotTesting */; };
+		35E95D742C5D15770062B645 /* SpaceX_LaunchesSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E95D732C5D15770062B645 /* SpaceX_LaunchesSnapshotTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +63,7 @@
 		35B06F3F2C5C6E80005E633C /* LaunchDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsView.swift; sourceTree = "<group>"; };
 		35B06F412C5C6F26005E633C /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		35B06F432C5C6F70005E633C /* formatDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formatDate.swift; sourceTree = "<group>"; };
+		35E95D732C5D15770062B645 /* SpaceX_LaunchesSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceX_LaunchesSnapshotTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35E95D722C5D14B80062B645 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,8 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35B06F5B2C5C8B02005E633C /* SnapshottingTests in Frameworks */,
-				35B06F592C5C8B02005E633C /* Snapshotting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +100,7 @@
 				35B06F152C5C69F9005E633C /* SpaceX LaunchesTests */,
 				35B06F1F2C5C69F9005E633C /* SpaceX LaunchesUITests */,
 				35B06F012C5C69F7005E633C /* Products */,
+				35E95D702C5D14B80062B645 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				35B06F162C5C69F9005E633C /* SpaceX_LaunchesTests.swift */,
+				35E95D732C5D15770062B645 /* SpaceX_LaunchesSnapshotTests.swift */,
 			);
 			path = "SpaceX LaunchesTests";
 			sourceTree = "<group>";
@@ -189,6 +191,13 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		35E95D702C5D14B80062B645 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,6 +235,9 @@
 				35B06F142C5C69F9005E633C /* PBXTargetDependency */,
 			);
 			name = "SpaceX LaunchesTests";
+			packageProductDependencies = (
+				35E95D712C5D14B80062B645 /* SnapshotTesting */,
+			);
 			productName = "SpaceX LaunchesTests";
 			productReference = 35B06F122C5C69F9005E633C /* SpaceX LaunchesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -245,8 +257,6 @@
 			);
 			name = "SpaceX LaunchesUITests";
 			packageProductDependencies = (
-				35B06F582C5C8B02005E633C /* Snapshotting */,
-				35B06F5A2C5C8B02005E633C /* SnapshottingTests */,
 			);
 			productName = "SpaceX LaunchesUITests";
 			productReference = 35B06F1C2C5C69F9005E633C /* SpaceX LaunchesUITests.xctest */;
@@ -286,7 +296,7 @@
 			mainGroup = 35B06EF72C5C69F7005E633C;
 			packageReferences = (
 				35B06F482C5C7C3F005E633C /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
-				35B06F572C5C8B02005E633C /* XCRemoteSwiftPackageReference "SnapshotPreviews-iOS" */,
+				35E95D6A2C5D11320062B645 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 35B06F012C5C69F7005E633C /* Products */;
 			projectDirPath = "";
@@ -347,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35E95D742C5D15770062B645 /* SpaceX_LaunchesSnapshotTests.swift in Sources */,
 				35B06F172C5C69F9005E633C /* SpaceX_LaunchesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -673,12 +684,12 @@
 				minimumVersion = 2.1.1;
 			};
 		};
-		35B06F572C5C8B02005E633C /* XCRemoteSwiftPackageReference "SnapshotPreviews-iOS" */ = {
+		35E95D6A2C5D11320062B645 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/EmergeTools/SnapshotPreviews-iOS";
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.17.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -689,15 +700,10 @@
 			package = 35B06F482C5C7C3F005E633C /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
 			productName = CachedAsyncImage;
 		};
-		35B06F582C5C8B02005E633C /* Snapshotting */ = {
+		35E95D712C5D14B80062B645 /* SnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 35B06F572C5C8B02005E633C /* XCRemoteSwiftPackageReference "SnapshotPreviews-iOS" */;
-			productName = Snapshotting;
-		};
-		35B06F5A2C5C8B02005E633C /* SnapshottingTests */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 35B06F572C5C8B02005E633C /* XCRemoteSwiftPackageReference "SnapshotPreviews-iOS" */;
-			productName = SnapshottingTests;
+			package = 35E95D6A2C5D11320062B645 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

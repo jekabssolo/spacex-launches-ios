@@ -16,6 +16,7 @@ struct LaunchDetailsView: View {
             VStack(alignment: .leading) {
                 Text(launch.name)
                     .font(.largeTitle)
+                    .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity, alignment: .center)
                 HStack {
                     BadgeView(color: .gray, text: formatDate(launch.date))
