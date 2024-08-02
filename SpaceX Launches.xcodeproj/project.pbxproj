@@ -118,7 +118,7 @@
 			children = (
 				35B06F3C2C5C6E2A005E633C /* Helpers */,
 				35B06F312C5C6BA5005E633C /* Models */,
-				35B06F302C5C6B81005E633C /* VIews */,
+				35B06F302C5C6B81005E633C /* Views */,
 				35B06F2F2C5C6B77005E633C /* Services */,
 				35B06F032C5C69F7005E633C /* SpaceX_LaunchesApp.swift */,
 				35B06F052C5C69F7005E633C /* ContentView.swift */,
@@ -161,7 +161,7 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		35B06F302C5C6B81005E633C /* VIews */ = {
+		35B06F302C5C6B81005E633C /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				35B06F362C5C6C3C005E633C /* LaunchListView.swift */,
@@ -169,7 +169,7 @@
 				35B06F3F2C5C6E80005E633C /* LaunchDetailsView.swift */,
 				35B06F412C5C6F26005E633C /* BadgeView.swift */,
 			);
-			path = VIews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		35B06F312C5C6BA5005E633C /* Models */ = {
