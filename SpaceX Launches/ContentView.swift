@@ -28,6 +28,10 @@ enum FilterType: String, CaseIterable {
     }
 }
 
+var isPreview: Bool {
+    return ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
+}
+
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var sortOrder = SortDescriptor(\Launch.date, order: .forward)
@@ -77,12 +81,16 @@ struct ContentView: View {
         }
         .navigationViewStyle(.stack)
         .task {
+            guard !isPreview else { return }
+            
             if shouldUpdateCache() {
                 apiService.updateLaunches(modelContext: modelContext)
                 lastUpdate = Date().timeIntervalSince1970
             }
         }
         .refreshable {
+            guard !isPreview else { return }
+            
             apiService.updateLaunches(modelContext: modelContext)
             lastUpdate = Date().timeIntervalSince1970
         }
