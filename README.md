@@ -17,14 +17,14 @@ A native iOS app that lists SpaceX launches and details.
 
 - SwiftUI for layout
 - Combine for data binding
-- SwiftData for data persistence
+- SwiftData + CachedAsyncImage for data persistence
 
 ## Main structure
 
 - Data from API loaded in ApiService and stored as Launch model in SwiftData
 - LaunchList and LaunchDetails form the main views for displaying data
 - SpaceX_LaunchesTests includes unit tests
-- PreviewSnapshotTests automatically generate and test preview snapshots
+- SpaceX_LaunchesSnapshotTests includes view snapshot tests
 
 ## Screenshots
 
