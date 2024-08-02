@@ -8,34 +8,70 @@
 import SwiftUI
 import SwiftData
 
+enum FilterType: String, CaseIterable {
+    case all = "All"
+    case upcoming = "Upcoming"
+    case successful = "Successful"
+    case unsuccessful = "Unsuccessful"
+    
+    func toPredicate() -> Predicate<Launch> {
+        switch self {
+            case .all:
+                .true
+            case .upcoming:
+                #Predicate<Launch> { $0.upcoming }
+            case .successful:
+                #Predicate<Launch> { $0.success ?? false }
+            case .unsuccessful:
+                #Predicate<Launch> { !($0.success ?? true) }
+        }
+    }
+}
+
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var sortOrder = SortDescriptor(\Launch.date, order: .forward)
+    @State private var filter: FilterType = .all
+    @State private var filterPredicate: Predicate<Launch> = .true
     @AppStorage("lastUpdate") private var lastUpdate: Double = Date().timeIntervalSince1970
     private let apiService = ApiService()
     
     var body: some View {
         NavigationView {
-            LaunchListView(sort: sortOrder)
+            LaunchListView(sort: sortOrder, filterPredicate: filterPredicate)
                 .navigationTitle("SpaceX Launches")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Menu {
-                            Picker("Sort", selection: $sortOrder) {
-                                Text("By date ascending")
-                                    .tag(SortDescriptor(\Launch.date, order: .forward))
-                                
-                                Text("By date descending")
-                                    .tag(SortDescriptor(\Launch.date, order: .reverse))
-                                
-                                Text("By name")
-                                    .tag(SortDescriptor(\Launch.name))
+                    ToolbarItemGroup {
+                            Menu {
+                                Picker("Filter", selection: $filter) {
+                                    ForEach(FilterType.allCases, id: \.rawValue) { option in
+                                        Text(option.rawValue)
+                                            .tag(option)
+                                    }
+                                }
+                                .pickerStyle(.inline)
+                            } label: {
+                                Image(systemName: "line.horizontal.3.decrease.circle")
                             }
-                            .pickerStyle(.inline)
-                        } label: {
-                            Image(systemName: "line.horizontal.3.decrease")
-                        }
+                            .onChange(of: filter) {
+                                filterPredicate = filter.toPredicate()
+                            }
+                            Menu {
+                                Picker("Sort", selection: $sortOrder) {
+                                    Text("By date ascending")
+                                        .tag(SortDescriptor(\Launch.date, order: .forward))
+                                    
+                                    Text("By date descending")
+                                        .tag(SortDescriptor(\Launch.date, order: .reverse))
+                                    
+                                    Text("By name")
+                                        .tag(SortDescriptor(\Launch.name))
+                                }
+                                .pickerStyle(.inline)
+                            } label: {
+                                Image(systemName: "arrow.up.arrow.down.circle")
+                            }
                     }
                 }
         }
