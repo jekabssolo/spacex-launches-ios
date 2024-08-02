@@ -23,6 +23,8 @@
 		35B06F422C5C6F26005E633C /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F412C5C6F26005E633C /* BadgeView.swift */; };
 		35B06F442C5C6F70005E633C /* formatDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F432C5C6F70005E633C /* formatDate.swift */; };
 		35B06F4A2C5C7C3F005E633C /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 35B06F492C5C7C3F005E633C /* CachedAsyncImage */; };
+		35B06F592C5C8B02005E633C /* Snapshotting in Frameworks */ = {isa = PBXBuildFile; productRef = 35B06F582C5C8B02005E633C /* Snapshotting */; };
+		35B06F5B2C5C8B02005E633C /* SnapshottingTests in Frameworks */ = {isa = PBXBuildFile; productRef = 35B06F5A2C5C8B02005E633C /* SnapshottingTests */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35B06F5B2C5C8B02005E633C /* SnapshottingTests in Frameworks */,
+				35B06F592C5C8B02005E633C /* Snapshotting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +244,10 @@
 				35B06F1E2C5C69F9005E633C /* PBXTargetDependency */,
 			);
 			name = "SpaceX LaunchesUITests";
+			packageProductDependencies = (
+				35B06F582C5C8B02005E633C /* Snapshotting */,
+				35B06F5A2C5C8B02005E633C /* SnapshottingTests */,
+			);
 			productName = "SpaceX LaunchesUITests";
 			productReference = 35B06F1C2C5C69F9005E633C /* SpaceX LaunchesUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -278,6 +286,7 @@
 			mainGroup = 35B06EF72C5C69F7005E633C;
 			packageReferences = (
 				35B06F482C5C7C3F005E633C /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+				35B06F572C5C8B02005E633C /* XCRemoteSwiftPackageReference "SnapshotPreviews-iOS" */,
 			);
 			productRefGroup = 35B06F012C5C69F7005E633C /* Products */;
 			projectDirPath = "";
@@ -664,6 +673,14 @@
 				minimumVersion = 2.1.1;
 			};
 		};
+		35B06F572C5C8B02005E633C /* XCRemoteSwiftPackageReference "SnapshotPreviews-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EmergeTools/SnapshotPreviews-iOS";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -671,6 +688,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 35B06F482C5C7C3F005E633C /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
 			productName = CachedAsyncImage;
+		};
+		35B06F582C5C8B02005E633C /* Snapshotting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 35B06F572C5C8B02005E633C /* XCRemoteSwiftPackageReference "SnapshotPreviews-iOS" */;
+			productName = Snapshotting;
+		};
+		35B06F5A2C5C8B02005E633C /* SnapshottingTests */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 35B06F572C5C8B02005E633C /* XCRemoteSwiftPackageReference "SnapshotPreviews-iOS" */;
+			productName = SnapshottingTests;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

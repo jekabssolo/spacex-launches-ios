@@ -6,6 +6,8 @@
 //
 
 import XCTest
+import Snapshotting
+import SnapshottingTests
 
 final class SpaceX_LaunchesUITests: XCTestCase {
 
@@ -38,4 +40,15 @@ final class SpaceX_LaunchesUITests: XCTestCase {
             }
         }
     }
+}
+
+class PreviewSnapshotTests: PreviewTest {
+
+  override func getApp() -> XCUIApplication {
+    return XCUIApplication()
+  }
+
+  override func snapshotPreviews() -> [String]? {
+    return nil
+  }
 }
