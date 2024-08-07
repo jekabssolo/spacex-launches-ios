@@ -7,20 +7,11 @@
 
 import Foundation
 import Combine
-import SwiftData
 
 class ApiService {
-    private let baseURL = "https://api.spacexdata.com/v5"
-    private var cancellables = Set<AnyCancellable>()
+    static let shared = ApiService()
     
-    func updateLaunches(modelContext: ModelContext) {
-        fetchLaunches()
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { _ in }) { launches in
-                launches.forEach { modelContext.insert($0) }
-            }
-            .store(in: &cancellables)
-    }
+    private let baseURL = "https://api.spacexdata.com/v5"
     
     func fetchLaunches() -> AnyPublisher<[Launch], Error> {
         guard let url = URL(string: baseURL + "/launches") else {

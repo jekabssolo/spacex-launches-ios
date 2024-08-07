@@ -7,7 +7,6 @@
 
 import XCTest
 import SwiftUI
-import SwiftData
 import SnapshotTesting
 @testable import SpaceX_Launches
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		357489B02C630B6B00E92742 /* LaunchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357489AF2C630B6B00E92742 /* LaunchesViewModel.swift */; };
+		357489E82C63201600E92742 /* predicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357489E72C63201600E92742 /* predicates.swift */; };
 		35B06F042C5C69F7005E633C /* SpaceX_LaunchesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F032C5C69F7005E633C /* SpaceX_LaunchesApp.swift */; };
 		35B06F062C5C69F7005E633C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B06F052C5C69F7005E633C /* ContentView.swift */; };
 		35B06F0A2C5C69F9005E633C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35B06F092C5C69F9005E633C /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		357489AF2C630B6B00E92742 /* LaunchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewModel.swift; sourceTree = "<group>"; };
+		357489E72C63201600E92742 /* predicates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = predicates.swift; sourceTree = "<group>"; };
 		35B06F002C5C69F7005E633C /* SpaceX Launches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpaceX Launches.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B06F032C5C69F7005E633C /* SpaceX_LaunchesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceX_LaunchesApp.swift; sourceTree = "<group>"; };
 		35B06F052C5C69F7005E633C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		357489AE2C630B5B00E92742 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				357489AF2C630B6B00E92742 /* LaunchesViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		35B06EF72C5C69F7005E633C = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +129,7 @@
 		35B06F022C5C69F7005E633C /* SpaceX Launches */ = {
 			isa = PBXGroup;
 			children = (
+				357489AE2C630B5B00E92742 /* ViewModels */,
 				35B06F3C2C5C6E2A005E633C /* Helpers */,
 				35B06F312C5C6BA5005E633C /* Models */,
 				35B06F302C5C6B81005E633C /* Views */,
@@ -187,6 +200,7 @@
 			children = (
 				35B06F3D2C5C6E3D005E633C /* formatLaunchStatus.swift */,
 				35B06F432C5C6F70005E633C /* formatDate.swift */,
+				357489E72C63201600E92742 /* predicates.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -343,10 +357,12 @@
 				35B06F442C5C6F70005E633C /* formatDate.swift in Sources */,
 				35B06F062C5C69F7005E633C /* ContentView.swift in Sources */,
 				35B06F352C5C6BFF005E633C /* ApiService.swift in Sources */,
+				357489E82C63201600E92742 /* predicates.swift in Sources */,
 				35B06F3B2C5C6C9B005E633C /* LaunchListItemView.swift in Sources */,
 				35B06F372C5C6C3C005E633C /* LaunchListView.swift in Sources */,
 				35B06F3E2C5C6E3D005E633C /* formatLaunchStatus.swift in Sources */,
 				35B06F332C5C6BBF005E633C /* Launch.swift in Sources */,
+				357489B02C630B6B00E92742 /* LaunchesViewModel.swift in Sources */,
 				35B06F422C5C6F26005E633C /* BadgeView.swift in Sources */,
 				35B06F402C5C6E80005E633C /* LaunchDetailsView.swift in Sources */,
 				35B06F042C5C69F7005E633C /* SpaceX_LaunchesApp.swift in Sources */,
@@ -514,6 +530,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SpaceX Launches/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -542,6 +559,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SpaceX Launches/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

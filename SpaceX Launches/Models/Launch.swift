@@ -6,11 +6,9 @@
 //
 
 import Foundation
-import SwiftData
 
-@Model
 final class Launch: Codable {
-    @Attribute(.unique) let id: String
+    let id: String
     let name: String
     let date: Date
     let success: Bool?
