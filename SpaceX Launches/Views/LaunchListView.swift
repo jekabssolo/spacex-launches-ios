@@ -12,19 +12,16 @@ struct LaunchListView: View {
     var launches: [Launch]
     
     var body: some View {
-        List {
-            ForEach(launches, id: \.id) { launch in
-                NavigationLink {
-                    LaunchDetailsView(launch: launch)
-                } label: {
-                    LaunchListItemView(launch: launch)
-                }
+        List(launches, id: \.id) { launch in
+            NavigationLink {
+                LaunchDetailsView(launch: launch)
+            } label: {
+                LaunchListItemView(launch: launch)
             }
             .listRowBackground(
                 Capsule()
                     .fill(colorScheme == .dark ? Color(red: 0.1, green: 0.1, blue: 0.1) : Color.white)
             )
-            .listRowSeparator(.hidden)
         }
         .id(UUID())
         .listRowSpacing(15)
